@@ -2,7 +2,7 @@ import { React, useRef, useEffect } from "react";
 
 function UserStream() {
   const userVideo = useRef(null);
-  const startStream = useEffect(() => {
+  useEffect(() => {
     window.addEventListener("load", async() => {
       const media = await navigator.mediaDevices.getUserMedia({
         video: "true",
@@ -15,9 +15,14 @@ function UserStream() {
     <>
     <div className="border-2 border-black absolute">
     <video ref={userVideo} autoPlay muted></video>
-    <button onClick={startStream}> </button>
+    {/* <button onClick={startStream}> start </button> */}
     </div>
     </>
   );
 }
+// function startStream() {
+//   const recorder = new MediaRecorder();
+//   setVideo(document.createElement(""));
+//   video.srcObject = media
+// }
 export default UserStream;
